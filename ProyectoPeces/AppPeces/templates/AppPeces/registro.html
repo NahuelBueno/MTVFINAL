@@ -1,0 +1,29 @@
+{% extends "AppPeces/padre.html" %}
+
+
+{ %load static% }
+
+
+{% block titulo %}
+
+  Aca podes registrarte
+
+{% endblock %}
+
+{% block descripcion %}
+
+   
+    <form action="" method="POST">{% csrf_token %}
+
+       
+        {{formulario.as_p}}
+
+        <button type="submit"> Registrarte </button>
+
+
+
+    </form>
+
+
+
+{% endblock %}

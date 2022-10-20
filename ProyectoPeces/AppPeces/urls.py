@@ -1,7 +1,9 @@
 from django.urls import path
 from AppPeces.views import *
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
+    
     path("", inicio, name="Inicio"),
     path("cursos/", curso, name="Curso"),
     path("profesores/", profesor, name="Profesores"),
@@ -10,6 +12,9 @@ urlpatterns = [
     path("form1/", formulario1, name="Formulario1"),
     path("busquedaCursos/", busquedaCursos),
     path("buscar/", buscar),
+    path("login/", inicioSesion, name="Login"),
+    path("register/", registro, name="SingUp"),
+    path("logout", LogoutView.as_view(template_name="AppPeces/logout.html"), name="Logout"),
     
 
     #CRUD de profesores
