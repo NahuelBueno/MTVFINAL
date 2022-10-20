@@ -1,0 +1,32 @@
+{% extends "AppPeces/padre.html" %}
+
+
+{ %load static% }
+
+
+{% block titulo %}
+
+<p> Estas buscando la camada: {{busqueda}} </p>
+
+{% endblock %}
+
+
+
+{% block descripcion %}
+
+    {% for curso in cursos %}
+
+        <ul>
+
+            <li>Curso: {{curso.nombre}}</li>
+            <li>Camada: {{curso.camada}}</li>
+
+
+        </ul>
+
+
+    {% endfor %}
+
+
+
+{% endblock %}
