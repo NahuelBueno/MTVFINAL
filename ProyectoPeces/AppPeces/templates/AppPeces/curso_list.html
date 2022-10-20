@@ -1,28 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% for curso in object_list %}
-
-    <p> Nombre: {{curso.nombre}}       </p>
+{% extends "AppPeces/padre.html" %}
 
 
-    <a href="{% url 'CursosDetalle' curso.id %}"> Ver Curso </a>
+{ %load static% }
 
-    {% endfor %}
 
-    <br>
+{% block titulo %}
 
-    <br> 
+   Inserte la camada que desea buscar 
 
-    <a href="{% url 'CursosCrear' %} "> Crear Curso </a>
+{% endblock %}
 
-    <br>
+{% block descripcion %}
 
-</body>
-</html>
+{% for curso in object_list %}
+
+<p> Nombre: {{curso.nombre}}       </p>
+
+
+<a href="{% url 'CursosDetalle' curso.id %}"> Ver Curso </a>
+<a href="{% url 'CursosEditar' curso.id %}"> Editar Curso </a>
+<a href="{% url 'CursosBorrar' curso.id %}"> Eliminar Curso </a>
+<br>
+<br>
+______________________
+{% endfor %}
+
+<br>
+
+<br> 
+
+<a href="{% url 'CursosCrear' %} "> Crear Curso </a>
+
+<br>
+{% endblock %}

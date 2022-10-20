@@ -24,7 +24,8 @@ urlpatterns = [
     path("curso/list/", ListaCurso.as_view(), name="CursosLeer"),
     path("curso/<int:pk>", DetalleCurso.as_view(), name="CursosDetalle"),
     path("curso/crear/", CrearCurso.as_view(), name="CursosCrear"),
-
+    path("curso/editar/<int:pk>", ActualizarCurso.as_view(), name="CursosEditar"),
+    path("curso/borrar/<int:pk>", BorrarCurso.as_view(), name="CursosBorrar"),
 
 
 ]
